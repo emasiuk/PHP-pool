@@ -1,0 +1,17 @@
+
+<- Vertex ----------------------------------------------------------------------
+The Color class handles x, y, z, w, color variables.
+
+An instance can be contructed from either a XYZ value:
+new Vertex( array( 'x' => 1, 'y' => 1, 'z' => 1 ) );
+
+Also you can add more values as Color and W :
+new Vertex( array( 'x' => 0.0, 'y' => 0.0, 'z' => 1.0, 'w' => 1, 'color' => $blue ) );
+
+Value X, Y, Z are mandatory else given by default but you can change it if you want of course;
+
+The class provides the following methods :
+
+Vertex get(); && Vertex set($val);
+For each variable like x, y, z, w, color.
+---------------------------------------------------------------------- Vertex ->

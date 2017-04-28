@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CALC</title>
+		<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js"></script>
+		<style media="screen">
+			html,
+			body,
+			.wrap
+			{
+				margin: 0;
+				height: 100%;
+			}
+			.container
+			{
+				width: 400px;
+				height: 100%;
+				padding: 20% 0;
+				margin: 0 auto;
+				box-sizing: border-box;
+			}
+			.calc_form input
+			{
+				height: 30px;
+				border-radius: 5px;
+				text-align: center;
+			}
+			.calc_form input:first-child,
+			.calc_form input:last-child
+			{
+				width: 162px;
+			}
+			.calc_form input:nth-child(2){width: 50px;}
+			.try_me_butt
+			{
+				float: right;
+				width: 100px;
+				height: 25px;
+				margin-top: 10px;
+				padding-top: 10px;
+				border-radius: 5px;
+				background: limegreen;
+			    border-bottom: 5px solid forestgreen;
+				color: white;
+				text-align: center;
+			}
+			.try_me_butt:hover
+			{
+				cursor: pointer;
+			}
+			.try_me_butt:active
+			{
+				margin-top: 15px;
+				border-bottom: 0px;
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="container">
+				<script type="text/javascript">
+				window.onload = function ()
+				{
+					var symb;
+					var arr = ['+', '-', '/', '*', '%'];
+					var left_num;
+					var right_num;
+					var result;
+
+					function show(str) {
+						alert(str);
+						console.log(str);
+						return (1);
+					}
+					setInterval("alert('Please, use me...')", 30000);
+					$('#tmb').click(function() {
+						let i = -1;
+						left_num = $('#left_num').val();
+						right_num = $('#right_num').val();
+						if (symb = $('#symb').val())
+							for (i = 0; i < arr.length && arr[i] != symb; i++)
+								;
+						symb = 0;
+						((0 > +left_num || 0 > +right_num) || (i > 4 || i < 0) || (left_num || right_num) == "") ? symb = show("Error :(") : 0;
+						(+right_num == 0 && (i == 2 || i == 4)) ? symb = show("I`ts over 9000!") : 0;
+						if (symb == 1)
+							 return ;
+						switch (i) {
+							case (0):
+								result = +left_num + +right_num;
+								break ;
+							case (1):
+								result = +left_num - +right_num;
+								break ;
+							case (2):
+								result = +left_num / +right_num;
+								break ;
+							case (3):
+								result = +left_num * +right_num;
+								break ;
+							default:
+								result = +left_num % +right_num;
+								break ;
+						}
+						show(result);
+
+					});
+				}
+
+				</script>
+				<form class="calc_form">
+					<input type="text" id="left_num">
+					<input type="text" id="symb">
+					<input type="text" id="right_num">
+				</form>
+				<div class="try_me_butt" id="tmb" type="button" name="try_me" value="try me !">Try me !</div>
+			</div>
+		</div>
+	</body>
+</html>

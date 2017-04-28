@@ -1,0 +1,47 @@
+BODY {
+	background: url(http://filslov.ru/uploads/posts/2011-08/1314211099_mendeleev-dmitrii.jpg) no-repeat;
+	color: black;
+	background-size: 100%;
+}
+.table {
+	height: 677px;
+}
+.table TD {
+	width: 60px;
+	height: 50px;
+	border: 1px solid black;
+}
+.elem {
+	text-align: center;
+	font-size: 2vw;
+}
+.atom {
+	text-align: right;
+	font-size: 1vw;
+
+}
+.num {
+	text-align: left;
+	font-size: 1vw;
+}
+.table .noelem {
+	border: none;
+}
+.table .pink {
+	background: #FF99CC;
+}
+.table .yellow {
+	background: #eaff00;
+}
+.table .blue {
+	background: #9999FF;
+}
+.table .green {
+	background: #99CC33;
+}
+.table .ultrafiolet {
+	background: #CC99FF;
+}
+.table .white {
+	background: #fff8dc;
+}

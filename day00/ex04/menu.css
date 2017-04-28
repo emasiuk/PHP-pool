@@ -1,0 +1,38 @@
+body {
+	background: green;
+}
+.drop_but {
+	color: red;
+	padding: 10px;
+	font-size: 16px;
+	border: none;
+	font-size: 16px;
+	cursor: pointer;
+}
+.drop {
+	position: relative;
+	display: inline-block;
+}
+.drop_cont {
+	display: none;
+	position: absolute;
+	width: 150px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+	background-color: #f9f9f9;
+}
+.drop_cont a {
+		color: black;
+		padding: 10px 10px;
+		display: block;
+		text-decoration: none;
+}
+.drop_cont a:hover {
+	background-color: #f1f1f1;
+}
+.drop:hover .drop_but {
+	background-color: #3e8e41
+}
+.drop:hover .drop_cont {
+	display: block;
+}

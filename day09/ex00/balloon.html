@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>balloon</title>
+		<script type="text/javascript">
+
+			window.onload = function () {
+				var ball = document.getElementById('balloon');
+				balloon.onclick = function change_size() {
+					if (ball.style.width >= '420px')
+					{
+						ball.style.height = '200px';
+						ball.style.width = '200px';
+					}
+					else {
+						ball.style.height = ball.offsetHeight + 10 + 'px';
+						ball.style.width = ball.offsetWidth + 10 + 'px';
+						if (ball.style.background != 'green' && ball.style.background != 'blue')
+							ball.style.background = 'red';
+						if (ball.style.background == 'red')
+							ball.style.background = 'green';
+						else if (ball.style.background == 'green')
+							ball.style.background = 'blue';
+						else
+							ball.style.background = 'red';
+					}
+				}
+				balloon.onmouseout = function change_size_re() {
+					if (ball.style.width > '200px')
+					{
+						ball.style.height = (ball.offsetHeight - 5) + 'px';
+						ball.style.width = (ball.offsetWidth - 5) + 'px';
+						if (ball.style.background == 'red')
+							ball.style.background = 'blue';
+						else if (ball.style.background == 'blue')
+							ball.style.background = 'green';
+						else
+							ball.style.background = 'red';
+					}
+				}
+			}
+		</script>
+		<style media="screen">
+			html,
+			body,
+			.wrap
+			{
+				margin: 0;
+				height:100%;
+			}
+			.container
+			{
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+			.balloon
+			{
+				position: absolute;
+				margin: 0 auto;
+				width: 200px;
+				height: 200px;
+				top: 20%;
+			    left: 50%;
+				border-radius: 100%;
+				background: red;
+			}
+			.balloon:hover
+			{
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="container">
+				<div class="balloon" id="balloon">
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

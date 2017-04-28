@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>balloon</title>
+		<script type="text/javascript" src="http://ajax.microsoft.com/ajax/jquery/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript">
+
+			var size = 200;
+			var colors = ['red', 'green', 'blue'];
+			var counter = 0;
+
+			$( window ).ready(function() {
+				$('#balloon').click(function() {
+					size >= 420 ? size = 200 : size += 10;
+					(counter == 2 ? counter = 0 : counter++);
+					if (size >= 420) {
+						$('#balloon').css('height', size);
+						$('#balloon').css('width', size);
+					}
+					else {
+						$('#balloon').css('height', size);
+						$('#balloon').css('width', size);
+						$('#balloon').css('background', colors[counter]);
+					}
+				});
+				$('#balloon').mouseout(function() {
+					if (size > 200) {
+						size -= 5;
+						(counter == 0 ? counter = 2 : counter--);
+						$('#balloon').css('height', size);
+						$('#balloon').css('width', size);
+						$('#balloon').css('background', colors[counter]);
+					}
+				});
+			});
+
+		</script>
+		<style media="screen">
+			html,
+			body,
+			.wrap
+			{
+				margin: 0;
+				height:100%;
+			}
+			.container
+			{
+				position: relative;
+				width: 100%;
+				height: 100%;
+			}
+			.balloon
+			{
+				position: absolute;
+				margin: 0 auto;
+				width: 200px;
+				height: 200px;
+				top: 20%;
+			    left: 50%;
+				border-radius: 100%;
+				background: red;
+			}
+			.balloon:hover
+			{
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="container">
+				<div class="balloon" id="balloon">
+
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
